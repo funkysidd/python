@@ -100,9 +100,6 @@ def parse_and_write_review_blocks(url, csv_file_name):
 
       for line in response:
         if line.find('class="comment-summary"')!=-1:
-          # _cntr = 1
-
-          # Resets the attributes
           attributes.reset()
 
           review_block_found = True
