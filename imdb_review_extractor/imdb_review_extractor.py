@@ -1,6 +1,5 @@
 '''
 Python script for extracting review information from IMDB.
-Implemented by Nidhi Singh (nis52@pitt.edu).
 '''
 
 #!/usr/bin/python
@@ -22,7 +21,7 @@ class User:
     self.name = ''
 
 '''
-Stores review specific attributes, including user the attribute.
+Stores review specific attributes, including user id and name.
 '''
 class Attributes:
   def __init__(self):
@@ -110,32 +109,16 @@ def parse_and_write_review_blocks(url, csv_file_name):
           review_counter = review_counter+1
         else:
           if review_block_found:
-            # interesting_found = False
-            # if line.find('class="avatar"')!=-1:
-            #   interesting_found = True
             if line.find('<h2>')!=-1:
-              # interesting_found = True
               attributes.review = parse_review(line)
             elif line.find('<img')!=-1:
-              # interesting_found = True
              attributes.rating = parse_rating(line)
-              # if len(rating)>0: 
-              #   print rating
-            # elif line.find('<b>')!=-1:
-            #   interesting_found = True;
             elif line.find('<a href=')!=-1:
-              # interesting_found = True;
               attributes.user = parse_user_id_and_name(line)
-              #if (_user._id!=-1):
-              #   print _user.name
             elif line.find('<small>')!=-1:
-              # interesting_found = True
               attributes.date = parse_date(line)
-              # if len(date)>0:
-              #   print date
             elif line.find('</td>')!=-1: 
               '''Corresponding to comment-summary'''
-              # interesting_found = True
               csv_file.write(attributes.to_str()+'\n')
               review_block_found = False
       
