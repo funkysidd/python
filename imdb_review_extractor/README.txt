@@ -8,14 +8,14 @@ Copy pasting review information from IMDB can be a tedious task, especially for
 movies with a huge number of reviews. Safe Haven for example has 680 reviews,
 where each review has 5 attributes.
 
-This presents the motivation for automating this task through computer script or
-code. More importantly the script can be standardized for extracting useful
+This presents the motivation for automating this task through a computer script
+or code. More importantly, the script can be standardized for extracting useful
 information for any movie listed on IMDB.
 
 Technique for extracting data:
 
 IMDB lists user reviews in an indexed format that can be accessed using a static
-URL. For example reviews for the movie Safe Haven can be accessed from the
+URL. For example, reviews for the movie Safe Haven can be accessed from the
 following link,
 
 http://www.imdb.com/title/tt1702439/reviews-index?start=0;count=131
